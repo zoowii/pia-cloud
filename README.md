@@ -14,3 +14,7 @@ pia-cloud
 **Collaborators**
 * [zoowii](https://github.com/zoowii)
 * [Dawn](https://github.com/dawn110110)
+* [Sight4](https://github.com/Sight4)
+* [mayflaver](https://github.com/mayflaver)
+* [jusker](https://github.com/jusker)
+
