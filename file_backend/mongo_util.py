@@ -1,6 +1,6 @@
 # coding: utf8
 from __future__ import print_function
-from . import settings
+import settings
 import pymongo
 
 

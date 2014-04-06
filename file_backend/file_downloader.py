@@ -5,8 +5,8 @@ from __future__ import print_function, unicode_literals
 import time
 import os
 import sys
-from file_backend import settings
-from file_backend import mongo_util
+import settings
+import mongo_util
 import requests
 import random
 import string
