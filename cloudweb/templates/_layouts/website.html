@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TikBucket">
+    <meta name="author" content="zoowii">
+    <link rel="shortcut icon" href="{{ static_url('img/favicon.jpg') }}">
+    <link rel="stylesheet" href="{{ static_url('css/styles.css') }}"/>
+    <script src="{{ static_url('js/jquery.min.js') }}"></script>
+    <script src="{{ static_url('js/bootstrap.min.js') }}"></script>
+    <script src="{{ static_url('js/underscore.min.js') }}"></script>
+    <script src="{{ static_url('js/docs.min.js') }}"></script>
+    <title>
+        {% block title %}
+        TikBucket
+        {% end %}
+    </title>
+    <link href="{{ static_url('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ static_url('css/website.css') }}" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{{ static_url('js/html5shiv.js') }}"></script>
+    <script src="{{ static_url('js/respond.min.js') }}"></script>
+    <![endif]-->
+</head>
+<body>
+{% block header %}
+<div class="blog-masthead">
+    <div class="container">
+        <nav class="blog-nav">
+            <a class="blog-nav-item active" href="{{ reverse_url('index') }}">Home</a>
+            {% if current_user is not None %}
+            <a class="blog-nav-item" href="#">Profile({{
+                current_user.user_name }})</a>
+            {% end %}
+            <!--<a class="blog-nav-item" href="#">Account Settings</a>-->
+            <!--<a class="blog-nav-item" href="#">Administration</a>-->
+            <a class="blog-nav-item" href="#">About</a>
+            {% if current_user is not None %}
+            <a class="blog-nav-item" href="{{ reverse_url('logout') }}">Sign Out</a>
+            {% else %}
+            <a class="blog-nav-item" href="{{ reverse_url('login') }}">Sign In</a>
+            {% end %}
+        </nav>
+    </div>
+</div>
+{% if message %}
+<div class="alert alert-info">{{ message }}</div>
+{% end %}
+{% end %}
+<div class="container">
+    {% block container %}{% end %}
+</div>
+{% block footer %}
+<div class="blog-footer">
+    <p>Author: <a href="https://github.com/pia-cloud">@pia-cloud Team</a></p>
+</div>
+{% end %}
+</body>
+</html>

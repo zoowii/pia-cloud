@@ -1,0 +1,10 @@
+{% extends '../_layouts/website.html' %}
+{% block title %}Create file download request{% end %}
+{% block container %}
+<form action="{{ reverse_url('file_service') }}" method="get" class="form-group">
+    <input type="text" name="url" placeholder="URL" class="form-control" value="http://bcs.duapp.com/zoowiionlineresource/checkerboard.jpg" required/>
+    <input type="text" name="filename" placeholder="File name" class="form-control" required/>
+    <input type="text" name="callback" placeholder="callback url" class="form-control" value="http://localhost:8888{{ reverse_url('file_service_test') }}" required/>
+    <input type="submit" value="提交"/>
+</form>
+{% end %}

@@ -1,0 +1,4 @@
+tornado>=3.2
+requests
+sqlalchemy
+pymongo
