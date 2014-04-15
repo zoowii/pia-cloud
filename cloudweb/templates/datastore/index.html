@@ -1,0 +1,32 @@
+{% extends '../_layouts/website.html' %}
+{% block title %}Datastore{% end %}
+{% block container %}
+<script src="{{ static_url('js/datastore_index.js') }}"></script>
+<script>
+    var sqlUrl = "{{ reverse_url('datastore_sql') }}".trim();
+</script>
+<div>
+    <textarea name="sql-field" cols="120" rows="4">暂时只能每次输入一条SQL语句</textarea>
+    <button class="btn btn-sm btn-primary execute-sql-btn">执行</button>
+    <div>
+        <h3>Help</h3>
+
+        <div>
+            use games
+            <br>
+            select songs.song, songs.game from songs
+            <br>
+            select * from songs where artist='pia-cloud'
+            <br>
+            insert into songs values (game='test song1', artist='pia-cloud1', song='cloud1', age=23)
+                                     (game='test song2', artist='pia-cloud2', song='cloud2', age=22)
+        </div>
+    </div>
+    <div class="result-window">
+        <table class="table table-border table-striped">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+{% end %}

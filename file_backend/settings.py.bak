@@ -1,0 +1,17 @@
+# coding: UTF-8
+from __future__ import print_function, unicode_literals
+import os
+
+PROJECT_DIR = os.path.dirname(__file__)
+BASE_DIR = os.path.dirname(PROJECT_DIR)
+
+# 填入真实的配置
+MONGO = {
+    'host': '',
+    'port': 27017,
+    'database': '',
+    'user': '',
+    'pass': '',
+}
+
+DATA_DIR = os.path.join(BASE_DIR, 'data')

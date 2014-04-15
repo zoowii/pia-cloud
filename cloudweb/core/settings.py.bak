@@ -1,0 +1,43 @@
+# coding: UTF-8
+from __future__ import print_function, unicode_literals
+import os
+
+PROJECT_DIR = os.path.dirname(__file__)
+BASE_DIR = os.path.dirname(PROJECT_DIR)
+
+DATABASE = {
+    'default': 'sqlite:///development.db'
+}
+
+echo_sql = True
+
+debug = True
+cookie_secret = 'Hi, pia-cloud!'
+
+SERVER_HOST = None  # the address of the server, use domain name or ip address or None if using auto detect
+
+DEFAULT_USER_AVATAR = 'http://bcs.duapp.com/zoowiionlineresource/checkerboard.jpg'
+
+app_settings = {
+    'debug': debug,
+    'cookie_secret': cookie_secret,
+    'template_path': os.path.join(BASE_DIR, 'templates'),
+    'static_path': os.path.join(BASE_DIR, 'static'),
+}
+
+INSTALLED_APPS = [
+    'auth',
+    'admin',
+    'app',
+    'fileservice',
+    'datastore',
+]
+
+# 填入真实的配置
+MONGO = {
+    'host': '',
+    'port': 27017,
+    'database': '',
+    'user': '',
+    'pass': '',
+}

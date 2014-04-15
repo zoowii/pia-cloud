@@ -1,0 +1,25 @@
+{% extends '../_layouts/website.html' %}
+
+{% block title %}
+Login
+{% end %}
+
+{% block header %}{% end %}
+
+{% block container %}
+<link rel="stylesheet" href="{{ static_url('css/signin.css') }}"/>
+{% if message %}
+<div class="alert alert-info">{{ message }}</div>
+{% end %}
+<form class="form-signin" role="form" method="POST" action="{{ reverse_url('register') }}">
+    <h2 class="form-signin-heading">请注册</h2>
+    <input type="text" class="form-control" name="username" placeholder="用户名" maxlength="50" required autofocus>
+    <input type="text" class="form-control" name="email" placeholder="邮箱" maxlength="30" required/>
+    <input type="password" class="form-control" name="password" maxlength="30" placeholder="密码" required>
+    <a href="{{ reverse_url('login') }}">已有账户？请登录</a>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+</form>
+{% end %}
+
+{% block footer %}
+{% end %}
