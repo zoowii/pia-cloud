@@ -1,0 +1,9 @@
+# coding: utf8
+
+store_service = {
+    'qiniu': {
+        'bucket': '',
+        'key': '',
+        'secret': '',
+    }
+}

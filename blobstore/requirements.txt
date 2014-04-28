@@ -1,0 +1,5 @@
+qiniu
+tornado
+sqlalchemy
+pymongo
+pyredis
